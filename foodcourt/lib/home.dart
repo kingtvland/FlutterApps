@@ -80,22 +80,6 @@ class _HomePageState extends State<HomePage> {
       200,
       0,
     ),
-    productList(
-      "Chocolate-Choko",
-      "TastyHurt",
-      "images/m11.jpg",
-      1,
-      200,
-      0,
-    ),
-    productList(
-      "Choko-pappri",
-      "TastyHurt",
-      "images/m12.jpg",
-      1,
-      200,
-      0,
-    ),
   ];
   List<productList> product = List.from(generateProductlist);
   void updateList(String value) {
