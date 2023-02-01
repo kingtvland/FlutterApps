@@ -1,15 +1,19 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_constructors
+
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SignUpState extends State<SignUp> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   final GlobalKey<FormState> _formKey = GlobalKey();
   final TextEditingController nameController = TextEditingController();
@@ -44,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                   height: 32,
                 ),
                 Text(
-                  "name",
+                  "Name",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
@@ -61,8 +65,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   controller: nameController,
                   decoration: InputDecoration(
-                      hintText: "Enter your name",
-                      labelText: "Enter your name",
+                      hintText: "Jane Doe",
                       hintStyle: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 15,
@@ -84,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                   height: 8,
                 ),
                 Text(
-                  "email",
+                  "Email",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
@@ -104,8 +107,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   controller: emailController,
                   decoration: InputDecoration(
-                      hintText: "Enter your email",
-                      labelText: "Enter your email",
+                      hintText: "aerfan.work@gmail.com",
                       hintStyle: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 15,
@@ -127,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                   height: 16,
                 ),
                 Text(
-                  "password",
+                  "Password",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
@@ -150,12 +152,10 @@ class _HomePageState extends State<HomePage> {
                   },
                   maxLines: 1,
                   keyboardType: TextInputType.text,
-                  obscuringCharacter: "*",
                   obscureText: isObsecure,
                   controller: passwordController,
                   decoration: InputDecoration(
-                    hintText: "Enter your password",
-                    labelText: "password",
+                    hintText: "Password",
                     hintStyle: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 15,
@@ -170,9 +170,12 @@ class _HomePageState extends State<HomePage> {
                             isObsecure = !isObsecure;
                           });
                         },
-                        icon: Icon(isObsecure
-                            ? Icons.visibility_off
-                            : Icons.visibility)),
+                        icon: isObsecure
+                            ? Icon(
+                                Icons.visibility_off,
+                                color: Colors.grey,
+                              )
+                            : Image.asset("images/eye.png")),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xffE1E1E1)),
                       borderRadius: BorderRadius.circular(8.0),
@@ -187,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                   height: 16,
                 ),
                 Text(
-                  "confirm password",
+                  "Confirm password",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
@@ -210,12 +213,10 @@ class _HomePageState extends State<HomePage> {
                   },
                   maxLines: 1,
                   keyboardType: TextInputType.text,
-                  obscuringCharacter: "*",
-                  obscureText: isObsecure,
+                  obscureText: isObsecure2,
                   controller: confirmpasswordController,
                   decoration: InputDecoration(
-                    hintText: "Enter your confirm password",
-                    labelText: "Confirm password",
+                    hintText: "Confirm password",
                     hintStyle: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 15,
@@ -227,12 +228,14 @@ class _HomePageState extends State<HomePage> {
                     suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
-                            isObsecure = !isObsecure;
+                            isObsecure2 = !isObsecure2;
                           });
                         },
-                        icon: Icon(isObsecure
-                            ? Icons.visibility_off
-                            : Icons.visibility)),
+                        icon: isObsecure2
+                            ? Icon(
+                                Icons.visibility_off,
+                              )
+                            : Image.asset("images/eye.png")),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
                       borderSide: BorderSide(color: Color(0xffE1E1E1)),
@@ -254,11 +257,11 @@ class _HomePageState extends State<HomePage> {
                   },
                   controller: nameController,
                   decoration: InputDecoration(
-                      hintText: "Slect Position",
+                      hintText: "Select Position",
                       hintStyle: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 15,
-                          color: Color(0xffACACAC),
+                          color: Color(0xff0086F0),
                           fontFamily: "SFPro"),
                       fillColor: Colors.white,
                       filled: true,
@@ -331,4 +334,5 @@ class _HomePageState extends State<HomePage> {
   }
 
   bool isObsecure = false;
+  bool isObsecure2 = false;
 }
