@@ -1,10 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_local_variable
 
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_countdown_timer/countdown.dart';
 import 'package:flutter_countdown_timer/countdown_controller.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:myapp/authontication/forgotpasswordpage.dart';
