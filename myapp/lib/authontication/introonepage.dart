@@ -1,10 +1,12 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ringknock/pages/introtwopage.dart';
-import 'package:ringknock/utils/colors.dart';
+import 'package:myapp/authontication/introtwopage.dart';
+import 'package:myapp/utils/colors.dart';
 
 class IntroOnePage extends StatefulWidget {
-  static const String routename='/introonepage';
+  static const String routename = '/introonepage';
   const IntroOnePage({Key? key}) : super(key: key);
 
   @override
@@ -14,48 +16,68 @@ class IntroOnePage extends StatefulWidget {
 class _IntroOnePageState extends State<IntroOnePage> {
   @override
   Widget build(BuildContext context) {
-    double sch=MediaQuery.of(context).size.height;
-    double scw=MediaQuery.of(context).size.width;
+    double sch = MediaQuery.of(context).size.height;
+    double scw = MediaQuery.of(context).size.width;
     return Scaffold(
-body: Center(
-  child: Column(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      SizedBox(height: 1,),
-      Image.asset('images/img1.png'),
-      Padding(
-        padding: const EdgeInsets.all(38.0),
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Easy to your on demand service',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-            SizedBox(height: 10,),
-            Text('Ringknock is an online on demand service.'
-                'It has as into 50k+ services. You can buy every onto a service',textAlign: TextAlign.center,style: TextStyle(fontSize: 19),),
+            SizedBox(
+              height: 1,
+            ),
+            Image.asset('images/img1.png'),
+            Padding(
+              padding: const EdgeInsets.all(38.0),
+              child: Column(
+                children: [
+                  Text(
+                    'Easy to your on demand service',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Ringknock is an online on demand service.'
+                    'It has as into 50k+ services. You can buy every onto a service',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 19),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(Icons.chevron_left, color: themeColorGreen, size: 25),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.circle,
+                        color: themeColorGreen,
+                        size: 12,
+                      ),
+                      Icon(Icons.circle, color: Colors.grey, size: 12),
+                      Icon(Icons.circle, color: Colors.grey, size: 12)
+                    ],
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                          context, IntroTwoPage.routename);
+                    },
+                    icon: Icon(Icons.chevron_right_outlined,
+                        color: themeColorGreen, size: 25),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-Icon(Icons.chevron_left,color: themeColorGreen,size: 25),
-            Row(
-              children: [
-                Icon(Icons.circle,color: themeColorGreen,size: 12,),
-                Icon(Icons.circle,color: Colors.grey,size: 12),
-                Icon(Icons.circle,color: Colors.grey,size: 12)
-              ],
-            ),
-            IconButton(onPressed: (){
-              Navigator.pushReplacementNamed(context, IntroTwoPage.routename);
-            }, icon: Icon(Icons.chevron_right_outlined,color: themeColorGreen,size: 25),)
-          ],
-        ),
-      )
-    ],
-  ),
-),
     );
   }
 }

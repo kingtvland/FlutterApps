@@ -1,24 +1,28 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ringknock/pages/enterverificationpage.dart';
-import 'package:ringknock/pages/signinpage.dart';
+import 'package:myapp/authontication/enterverificationpage.dart';
+import 'package:myapp/authontication/signinpage.dart';
 
 import '../utils/colors.dart';
 
 class ForegPasswordPage extends StatefulWidget {
-  static const String routename='/forgetpasswordpage';
+  static const String routename = '/forgetpasswordpage';
   const ForegPasswordPage({Key? key}) : super(key: key);
 
   @override
   State<ForegPasswordPage> createState() => _ForegPasswordPageState();
 }
-String? accounttype="phone";
+
+String? accounttype = "phone";
 final phoneController = TextEditingController();
+
 class _ForegPasswordPageState extends State<ForegPasswordPage> {
   @override
   Widget build(BuildContext context) {
-    double scheight= MediaQuery.of(context).size.height;
-    double scwidth= MediaQuery.of(context).size.width;
+    double scheight = MediaQuery.of(context).size.height;
+    double scwidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -32,8 +36,7 @@ class _ForegPasswordPageState extends State<ForegPasswordPage> {
                     topLeft: Radius.circular(90),
                     topRight: Radius.circular(90),
                     bottomLeft: Radius.circular(90),
-                    bottomRight: Radius.circular(90)
-                ),
+                    bottomRight: Radius.circular(90)),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.1),
@@ -44,134 +47,144 @@ class _ForegPasswordPageState extends State<ForegPasswordPage> {
                 ],
               ),
               child: IconButton(
-                icon: Icon(Icons.arrow_back_ios_sharp,color: themeColorGreen,),
-                onPressed: (){
+                icon: Icon(
+                  Icons.arrow_back_ios_sharp,
+                  color: themeColorGreen,
+                ),
+                onPressed: () {
                   Navigator.pushReplacementNamed(context, SignInPage.routename);
                 },
-              )
-
-          ),
+              )),
         ),
-        title: Text('Forgot Password?',style: TextStyle(color: Colors.black.withOpacity(0.5)),),
+        title: Text(
+          'Forgot Password?',
+          style: TextStyle(color: Colors.black.withOpacity(0.5)),
+        ),
       ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                 SizedBox(height: 10,),
-                 Row(
-                   children: [
-                     Expanded(
-                       child: RadioListTile(
-                         activeColor: themeColorGreen,
-                         title: Text('Phone'),
-                         value: "phone",
-                         groupValue: accounttype,
-                         onChanged: (value){
-                           setState(() {
-                             accounttype = value.toString();
-                           });
-                         },
-                       ),
-                     ),
-                     Expanded(
-                       child: RadioListTile(
-                         activeColor: themeColorGreen,
-                         title: Text('Email'),
-                         value: "email",
-                         groupValue: accounttype,
-                         onChanged: (value){
-                           setState(() {
-                             accounttype = value.toString();
-                           });
-                         },
-                       ),
-                     ),
-                   ],
-                 ),
-                 SizedBox(height: 50,),
-                 accounttype=='phone'?
-                 Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Text('Enter Your Phone',style: TextStyle(fontSize: 18),),
-                     SizedBox(height: 5,),
-                     TextFormField(
-                       controller: phoneController,
-                       decoration:  InputDecoration(
-                           filled: true,
-                           fillColor: themeColorGreen.withOpacity(0.1),
-                           //prefixIcon: Icon(Icons.email_outlined,color: Colors.black,),
-                           focusedBorder:OutlineInputBorder(
-                               borderSide: BorderSide(color: Colors.black, width: 0.5)),
-
-                           enabledBorder: const OutlineInputBorder(
-
-                               borderSide: BorderSide(color: Colors.black, width: 0.5)),
-
-                           border: const OutlineInputBorder(
-
-                               borderSide: BorderSide(color: Colors.black, width: 0)),
-
-                           hintText: '+880100000000'
-
-                       ),
-
-                     ),
-                   ],
-                 ):
-                 Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Text('Enter Your Email',style: TextStyle(fontSize: 18),),
-                     SizedBox(height: 5,),
-                     TextFormField(
-                       controller: phoneController,
-                       decoration:  InputDecoration(
-                           filled: true,
-                           fillColor: themeColorGreen.withOpacity(0.1),
-                           //prefixIcon: Icon(Icons.email_outlined,color: Colors.black,),
-                           focusedBorder:OutlineInputBorder(
-                               borderSide: BorderSide(color: Colors.black, width: 0.5)),
-
-                           enabledBorder: const OutlineInputBorder(
-
-                               borderSide: BorderSide(color: Colors.black, width: 0.5)),
-
-                           border: const OutlineInputBorder(
-
-                               borderSide: BorderSide(color: Colors.black, width: 0)),
-
-                           hintText: 'h@gmail.com'
-
-                       ),
-
-                     ),
-                   ],
-                 ),
-                 SizedBox(height: 38,),
-                 SizedBox(
-                   height: 50,
-                   width: scwidth-18,
-                   child: ElevatedButton(
-                       style: ElevatedButton.styleFrom(
-                         primary: themeColorGreen,
-                         shape: RoundedRectangleBorder(
-                           borderRadius:
-                           BorderRadius.circular(10), // <-- Radius
-                         ),
-                       ),
-                       onPressed: ()  {
-                         Navigator.pushReplacementNamed(context, VerificationPage.routename);
-                       },
-                       child:  Text(
-                         'Next',
-                         style: TextStyle(color: Colors.white,fontSize: 18),
-                       )),
-                 ),
-               ],
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: RadioListTile(
+                      activeColor: themeColorGreen,
+                      title: Text('Phone'),
+                      value: "phone",
+                      groupValue: accounttype,
+                      onChanged: (value) {
+                        setState(() {
+                          accounttype = value.toString();
+                        });
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    child: RadioListTile(
+                      activeColor: themeColorGreen,
+                      title: Text('Email'),
+                      value: "email",
+                      groupValue: accounttype,
+                      onChanged: (value) {
+                        setState(() {
+                          accounttype = value.toString();
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              accounttype == 'phone'
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Enter Your Phone',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        TextFormField(
+                          controller: phoneController,
+                          decoration: InputDecoration(
+                              filled: true,
+                              fillColor: themeColorGreen.withOpacity(0.1),
+                              //prefixIcon: Icon(Icons.email_outlined,color: Colors.black,),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.black, width: 0.5)),
+                              enabledBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.black, width: 0.5)),
+                              border: const OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.black, width: 0)),
+                              hintText: '+880100000000'),
+                        ),
+                      ],
+                    )
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Enter Your Email',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        TextFormField(
+                          controller: phoneController,
+                          decoration: InputDecoration(
+                              filled: true,
+                              fillColor: themeColorGreen.withOpacity(0.1),
+                              //prefixIcon: Icon(Icons.email_outlined,color: Colors.black,),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.black, width: 0.5)),
+                              enabledBorder: const OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.black, width: 0.5)),
+                              border: const OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.black, width: 0)),
+                              hintText: 'h@gmail.com'),
+                        ),
+                      ],
+                    ),
+              SizedBox(
+                height: 38,
+              ),
+              SizedBox(
+                height: 50,
+                width: scwidth - 18,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: themeColorGreen,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10), // <-- Radius
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                          context, VerificationPage.routename);
+                    },
+                    child: Text(
+                      'Next',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    )),
+              ),
+            ],
           ),
         ),
       ),

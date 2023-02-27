@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
@@ -5,26 +7,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/countdown.dart';
 import 'package:flutter_countdown_timer/countdown_controller.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
-import 'package:ringknock/pages/forgotpasswordpage.dart';
-import 'package:ringknock/pages/resetpasswordpage.dart';
+import 'package:myapp/authontication/forgotpasswordpage.dart';
+import 'package:myapp/authontication/resetpasswordpage.dart';
 
 import '../utils/colors.dart';
 
 class VerificationPage extends StatefulWidget {
-  static const String routename='/verificationpage';
+  static const String routename = '/verificationpage';
   const VerificationPage({Key? key}) : super(key: key);
 
   @override
   State<VerificationPage> createState() => _VerificationPageState();
 }
+
 bool _onEditing = true;
 String? _code;
-CountdownController countdownController = CountdownController(duration: Duration(minutes: 1));
+CountdownController countdownController =
+    CountdownController(duration: Duration(minutes: 1));
+
 class _VerificationPageState extends State<VerificationPage> {
   int _counter = 0;
-  int click=0;
+  int click = 0;
   late Timer _timer;
- Color timertxcol=themeColorGreen;
+  Color timertxcol = themeColorGreen;
   void _startTimer() {
     _counter = 60;
     _timer = Timer.periodic(Duration(milliseconds: 1550), (timer) {
@@ -32,20 +37,18 @@ class _VerificationPageState extends State<VerificationPage> {
         setState(() {
           _counter--;
         });
-      }
-      else if(_counter==0)
-        {
-          timertxcol=Colors.red;
-        }
-        else {
+      } else if (_counter == 0) {
+        timertxcol = Colors.red;
+      } else {
         _timer.cancel();
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    double scheight= MediaQuery.of(context).size.height;
-    double scwidth= MediaQuery.of(context).size.width;
+    double scheight = MediaQuery.of(context).size.height;
+    double scwidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -59,8 +62,7 @@ class _VerificationPageState extends State<VerificationPage> {
                     topLeft: Radius.circular(90),
                     topRight: Radius.circular(90),
                     bottomLeft: Radius.circular(90),
-                    bottomRight: Radius.circular(90)
-                ),
+                    bottomRight: Radius.circular(90)),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.1),
@@ -71,88 +73,107 @@ class _VerificationPageState extends State<VerificationPage> {
                 ],
               ),
               child: IconButton(
-                icon: Icon(Icons.arrow_back_ios_sharp,color: themeColorGreen,),
-                onPressed: (){
-                  Navigator.pushReplacementNamed(context, ForegPasswordPage.routename);
+                icon: Icon(
+                  Icons.arrow_back_ios_sharp,
+                  color: themeColorGreen,
+                ),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(
+                      context, ForegPasswordPage.routename);
                 },
-              )
-
-          ),
+              )),
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Enter Code',style: TextStyle(color: Colors.black.withOpacity(0.5)),),
-            Text('Code has sent to 091*******',style: TextStyle(fontSize:15,color: Colors.black.withOpacity(0.5)),)
+            Text(
+              'Enter Code',
+              style: TextStyle(color: Colors.black.withOpacity(0.5)),
+            ),
+            Text(
+              'Code has sent to 091*******',
+              style:
+                  TextStyle(fontSize: 15, color: Colors.black.withOpacity(0.5)),
+            )
           ],
         ),
       ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 40,),
-        VerificationCode(
-        textStyle: Theme.of(context)
-            .textTheme
-            .bodyText2!
-            .copyWith(color: Theme.of(context).primaryColor),
-        keyboardType: TextInputType.number,
-        fullBorder: true,
-        fillColor: Colors.grey.withOpacity(0.1),
-        underlineWidth: 1,
-        underlineColor: themeColorGreen, // If this is null it will use primaryColor: Colors.red from Theme
-        length: 4,
-          cursorColor: themeColorGreen, // If this is null it will default to the ambient
-        margin: const EdgeInsets.all(5),
-        onCompleted: (String value) {
-        setState(() {
-        _code = value;
-        });
-        },
-        onEditing: (bool value) {
-        setState(() {
-        _onEditing = value;
-        });
-        if (!_onEditing) FocusScope.of(context).unfocus();
-        },
-        ),
-            SizedBox(height: 38,),
+            SizedBox(
+              height: 40,
+            ),
+            VerificationCode(
+              textStyle: Theme.of(context)
+                  .textTheme
+                  .bodyText2!
+                  .copyWith(color: Theme.of(context).primaryColor),
+              keyboardType: TextInputType.number,
+              fullBorder: true,
+              fillColor: Colors.grey.withOpacity(0.1),
+              underlineWidth: 1,
+              underlineColor:
+                  themeColorGreen, // If this is null it will use primaryColor: Colors.red from Theme
+              length: 4,
+              cursorColor:
+                  themeColorGreen, // If this is null it will default to the ambient
+              margin: const EdgeInsets.all(5),
+              onCompleted: (String value) {
+                setState(() {
+                  _code = value;
+                });
+              },
+              onEditing: (bool value) {
+                setState(() {
+                  _onEditing = value;
+                });
+                if (!_onEditing) FocusScope.of(context).unfocus();
+              },
+            ),
+            SizedBox(
+              height: 38,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Re-send Code in ",style: TextStyle(fontSize: 15),),
-                Text("$_counter ",style: TextStyle(fontSize: 15,color: timertxcol)),
-                Text("seconds",style: TextStyle(fontSize: 15)),
+                Text(
+                  "Re-send Code in ",
+                  style: TextStyle(fontSize: 15),
+                ),
+                Text("$_counter ",
+                    style: TextStyle(fontSize: 15, color: timertxcol)),
+                Text("seconds", style: TextStyle(fontSize: 15)),
               ],
             ),
-            SizedBox(height: 38,),
+            SizedBox(
+              height: 38,
+            ),
             SizedBox(
               height: 45,
-              width: scwidth-50,
+              width: scwidth - 50,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: themeColorGreen,
                     shape: RoundedRectangleBorder(
-                      borderRadius:
-                      BorderRadius.circular(10), // <-- Radius
+                      borderRadius: BorderRadius.circular(10), // <-- Radius
                     ),
                   ),
-                  onPressed: ()  {
+                  onPressed: () {
                     setState(() {
-_startTimer();
-click++;
+                      _startTimer();
+                      click++;
                     });
-                    if(click>2)
-                    {
-                      Navigator.pushReplacementNamed(context, ResetPasswordPage.routename);
+                    if (click > 2) {
+                      Navigator.pushReplacementNamed(
+                          context, ResetPasswordPage.routename);
                     }
                   },
-                  child:  Text(
-                    _counter==0?'Re-send':'Next',
-                    style: TextStyle(color: Colors.white,fontSize: 18),
+                  child: Text(
+                    _counter == 0 ? 'Re-send' : 'Next',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
                   )),
             ),
-
           ],
         ),
       ),
