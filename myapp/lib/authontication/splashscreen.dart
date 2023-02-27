@@ -26,19 +26,21 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(color: themeColorGreen),
-          child: ClipRRect(
-              child: Image.asset(
-            'images/ring.jpg',
-            fit: BoxFit.cover,
-            width: MediaQuery.of(context).size.width,
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: Container(
             height: MediaQuery.of(context).size.height,
-          )),
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(color: themeColorGreen),
+            child: ClipRRect(
+                child: Image.asset(
+              'images/ring.jpg',
+              fit: BoxFit.cover,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+            )),
+          ),
         ),
       ),
     );

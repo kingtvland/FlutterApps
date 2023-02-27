@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_local_variable
+// ignore_for_file: prefer_const_constructors, unused_local_variable, deprecated_member_use
 
 import 'dart:async';
 
@@ -47,132 +47,134 @@ class _VerificationPageState extends State<VerificationPage> {
   Widget build(BuildContext context) {
     double scheight = MediaQuery.of(context).size.height;
     double scwidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(90),
-                    topRight: Radius.circular(90),
-                    bottomLeft: Radius.circular(90),
-                    bottomRight: Radius.circular(90)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.1),
-                    spreadRadius: 1,
-                    blurRadius: 1,
-                    offset: Offset(0, 2), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: IconButton(
-                icon: Icon(
-                  Icons.arrow_back_ios_sharp,
-                  color: themeColorGreen,
-                ),
-                onPressed: () {
-                  Navigator.pushReplacementNamed(
-                      context, ForegPasswordPage.routename);
-                },
-              )),
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Enter Code',
-              style: TextStyle(color: Colors.black.withOpacity(0.5)),
-            ),
-            Text(
-              'Code has sent to 091*******',
-              style:
-                  TextStyle(fontSize: 15, color: Colors.black.withOpacity(0.5)),
-            )
-          ],
-        ),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-            VerificationCode(
-              textStyle: Theme.of(context)
-                  .textTheme
-                  .bodyText2!
-                  .copyWith(color: Theme.of(context).primaryColor),
-              keyboardType: TextInputType.number,
-              fullBorder: true,
-              fillColor: Colors.grey.withOpacity(0.1),
-              underlineWidth: 1,
-              underlineColor:
-                  themeColorGreen, // If this is null it will use primaryColor: Colors.red from Theme
-              length: 4,
-              cursorColor:
-                  themeColorGreen, // If this is null it will default to the ambient
-              margin: const EdgeInsets.all(5),
-              onCompleted: (String value) {
-                setState(() {
-                  _code = value;
-                });
-              },
-              onEditing: (bool value) {
-                setState(() {
-                  _onEditing = value;
-                });
-                if (!_onEditing) FocusScope.of(context).unfocus();
-              },
-            ),
-            SizedBox(
-              height: 38,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Re-send Code in ",
-                  style: TextStyle(fontSize: 15),
-                ),
-                Text("$_counter ",
-                    style: TextStyle(fontSize: 15, color: timertxcol)),
-                Text("seconds", style: TextStyle(fontSize: 15)),
-              ],
-            ),
-            SizedBox(
-              height: 38,
-            ),
-            SizedBox(
-              height: 45,
-              width: scwidth - 50,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: themeColorGreen,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10), // <-- Radius
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(90),
+                      topRight: Radius.circular(90),
+                      bottomLeft: Radius.circular(90),
+                      bottomRight: Radius.circular(90)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.1),
+                      spreadRadius: 1,
+                      blurRadius: 1,
+                      offset: Offset(0, 2), // changes position of shadow
                     ),
+                  ],
+                ),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_ios_sharp,
+                    color: themeColorGreen,
                   ),
                   onPressed: () {
-                    setState(() {
-                      _startTimer();
-                      click++;
-                    });
-                    if (click > 2) {
-                      Navigator.pushReplacementNamed(
-                          context, ResetPasswordPage.routename);
-                    }
+                    Navigator.pushReplacementNamed(
+                        context, ForegPasswordPage.routename);
                   },
-                  child: Text(
-                    _counter == 0 ? 'Re-send' : 'Next',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  )),
-            ),
-          ],
+                )),
+          ),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Enter Code',
+                style: TextStyle(color: Colors.black.withOpacity(0.5)),
+              ),
+              Text(
+                'Code has sent to 091*******',
+                style: TextStyle(
+                    fontSize: 15, color: Colors.black.withOpacity(0.5)),
+              )
+            ],
+          ),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 40,
+              ),
+              VerificationCode(
+                textStyle: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(color: Theme.of(context).primaryColor),
+                keyboardType: TextInputType.number,
+                fullBorder: true,
+                fillColor: Colors.grey.withOpacity(0.1),
+                underlineWidth: 1,
+                underlineColor:
+                    themeColorGreen, // If this is null it will use primaryColor: Colors.red from Theme
+                length: 4,
+                cursorColor:
+                    themeColorGreen, // If this is null it will default to the ambient
+                margin: const EdgeInsets.all(5),
+                onCompleted: (String value) {
+                  setState(() {
+                    _code = value;
+                  });
+                },
+                onEditing: (bool value) {
+                  setState(() {
+                    _onEditing = value;
+                  });
+                  if (!_onEditing) FocusScope.of(context).unfocus();
+                },
+              ),
+              SizedBox(
+                height: 38,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Re-send Code in ",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  Text("$_counter ",
+                      style: TextStyle(fontSize: 15, color: timertxcol)),
+                  Text("seconds", style: TextStyle(fontSize: 15)),
+                ],
+              ),
+              SizedBox(
+                height: 38,
+              ),
+              SizedBox(
+                height: 45,
+                width: scwidth - 50,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: themeColorGreen,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10), // <-- Radius
+                      ),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _startTimer();
+                        click++;
+                      });
+                      if (click > 2) {
+                        Navigator.pushReplacementNamed(
+                            context, ResetPasswordPage.routename);
+                      }
+                    },
+                    child: Text(
+                      _counter == 0 ? 'Re-send' : 'Next',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    )),
+              ),
+            ],
+          ),
         ),
       ),
     );
