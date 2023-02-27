@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 
 class SubCategoryPage extends StatefulWidget {
   const SubCategoryPage({super.key});
@@ -13,6 +14,12 @@ class SubCategoryPage extends StatefulWidget {
 class _SubCategoryPageState extends State<SubCategoryPage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   final TextEditingController nameController = TextEditingController();
+  final List<String> items = [
+    'Sub Categories',
+    'Most Popular',
+    'All Categories',
+  ];
+  String? selectedValue;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -54,9 +61,111 @@ class _SubCategoryPageState extends State<SubCategoryPage> {
       ),
       body: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding:
+                  EdgeInsets.only(left: 20, top: 20, bottom: 10, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Center(
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton2(
+                        isExpanded: true,
+                        hint: Row(
+                          children: [
+                            SizedBox(
+                              width: 4,
+                            ),
+                            Expanded(
+                              child: Text(
+                                'Sub Categories',
+                                style: GoogleFonts.roboto(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 1,
+                                  color: Color(0xffF2F2F2),
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                        items: items
+                            .map((item) => DropdownMenuItem<String>(
+                                  value: item,
+                                  child: Text(
+                                    item,
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      letterSpacing: 1,
+                                      color: Color(0xffF2F2F2),
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ))
+                            .toList(),
+                        value: selectedValue,
+                        onChanged: (value) {
+                          setState(() {
+                            selectedValue = value as String;
+                          });
+                        },
+                        icon: Icon(
+                          Icons.arrow_drop_down,
+                        ),
+                        iconSize: 14,
+                        iconEnabledColor: Color(0xffF2F2F2),
+                        iconDisabledColor: Colors.grey,
+                        buttonHeight: 36,
+                        buttonWidth: 207,
+                        buttonPadding: EdgeInsets.only(left: 14, right: 14),
+                        buttonDecoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: Color(0xff187949),
+                        ),
+                        buttonElevation: 2,
+                        itemHeight: 40,
+                        itemPadding: EdgeInsets.only(left: 14, right: 14),
+                        dropdownMaxHeight: 200,
+                        dropdownWidth: 200,
+                        dropdownPadding: null,
+                        dropdownDecoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: Color(0xff187949),
+                        ),
+                        dropdownElevation: 8,
+                        scrollbarRadius: Radius.circular(4),
+                        scrollbarThickness: 6,
+                        scrollbarAlwaysShow: true,
+                        offset: Offset(-20, 0),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 36,
+                    width: 68,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(3),
+                        color: Color(0xff187949)),
+                    child: Center(
+                      child: Text(
+                        "Filter",
+                        style: GoogleFonts.roboto(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xffF2F2F2),
+                            letterSpacing: 1),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Row(
                 children: [
                   Expanded(

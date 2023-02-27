@@ -155,7 +155,7 @@ class _DocumentState extends State<Document> {
                                               width: 74,
                                               child: Center(
                                                   child: Text(
-                                                "Post a job",
+                                                "Book Now",
                                                 style: GoogleFonts.roboto(
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.w500,
