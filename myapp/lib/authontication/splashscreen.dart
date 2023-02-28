@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _navigatesplash() async {
-    await Future.delayed(Duration(milliseconds: 1400), () {});
+    await Future.delayed(Duration(milliseconds: 1500), () {});
     Navigator.pushNamed(context, IntroOnePage.routename);
   }
 

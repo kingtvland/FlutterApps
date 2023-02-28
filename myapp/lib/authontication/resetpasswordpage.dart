@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/enterverificationpage.dart';
 
 import '../utils/colors.dart';
@@ -83,7 +84,10 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 ),
                 Text(
                   'New Password',
-                  style: TextStyle(fontSize: 18),
+                  style: GoogleFonts.roboto(
+                      fontSize: 16,
+                      color: Color(0xff25302B),
+                      fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 5,
@@ -134,7 +138,10 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 ),
                 Text(
                   'Confirm Password',
-                  style: TextStyle(fontSize: 18),
+                  style: GoogleFonts.roboto(
+                      fontSize: 16,
+                      color: Color(0xff25302B),
+                      fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
                   height: 5,
@@ -196,7 +203,10 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                       onPressed: () {},
                       child: Text(
                         'Save',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500),
                       )),
                 ),
               ],

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/signupaccountchoosepage.dart';
 
 import '../utils/colors.dart';
@@ -68,7 +69,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
             ),
             title: Text(
               'Registration',
-              style: TextStyle(color: Colors.black.withOpacity(0.5)),
+              style: GoogleFonts.roboto(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff555957)),
             ),
           ),
           body: SingleChildScrollView(
@@ -79,7 +83,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 children: [
                   Text(
                     'Full name',
-                    style: TextStyle(fontSize: 18),
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
                   ),
                   SizedBox(
                     height: 5,
@@ -108,7 +115,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   Text(
                     'Enter your email',
-                    style: TextStyle(fontSize: 18),
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
                   ),
                   SizedBox(
                     height: 5,
@@ -137,7 +147,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   Text(
                     'Password',
-                    style: TextStyle(fontSize: 18),
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
                   ),
                   SizedBox(
                     height: 5,
@@ -189,7 +202,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   Text(
                     'Confirm Password',
-                    style: TextStyle(fontSize: 18),
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
                   ),
                   SizedBox(
                     height: 5,
@@ -244,7 +260,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   Text(
                     'Date of birth',
-                    style: TextStyle(fontSize: 18),
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
                   ),
                   SizedBox(
                     height: 5,
@@ -303,7 +322,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   Text(
                     'Corporate Name',
-                    style: TextStyle(fontSize: 18),
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
                   ),
                   SizedBox(
                     height: 5,
@@ -332,7 +354,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   Text(
                     'Corporate Number',
-                    style: TextStyle(fontSize: 18),
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
                   ),
                   SizedBox(
                     height: 5,
@@ -373,7 +398,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         onPressed: () {},
                         child: Text(
                           'Next',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          style: GoogleFonts.roboto(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xffFFFFFF)),
                         )),
                   ),
                 ],

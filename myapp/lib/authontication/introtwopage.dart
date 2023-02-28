@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/introonepage.dart';
 import 'package:myapp/authontication/signinpage.dart';
 
@@ -40,8 +41,11 @@ class _IntroTwoPageState extends State<IntroTwoPage> {
                   children: [
                     Text(
                       'Easy to your on demand service',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.roboto(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 2,
+                          color: Color(0xff555957)),
                     ),
                     SizedBox(
                       height: 10,
@@ -50,7 +54,10 @@ class _IntroTwoPageState extends State<IntroTwoPage> {
                       'Ringknock is an online on demand service.'
                       'It has as into 50k+ services. You can buy every onto a service',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 19),
+                      style: GoogleFonts.roboto(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w300,
+                          color: Color(0xff555957)),
                     ),
                   ],
                 ),

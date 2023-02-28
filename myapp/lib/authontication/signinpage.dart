@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/introtwopage.dart';
 import 'package:myapp/authontication/signupintropage.dart';
 import 'package:myapp/utils/colors.dart';
@@ -76,8 +77,10 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     Text(
                       'Sign in to your account',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                      style: GoogleFonts.roboto(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff555957)),
                     ),
                     SizedBox(
                       height: 30,
@@ -91,12 +94,17 @@ class _SignInPageState extends State<SignInPage> {
                             children: [
                               Text(
                                 'Email',
-                                style: TextStyle(fontSize: 18),
+                                style: GoogleFonts.roboto(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff555957)),
                               ),
                               Text(
                                 '*',
-                                style:
-                                    TextStyle(color: Colors.red, fontSize: 15),
+                                style: GoogleFonts.roboto(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff555957)),
                               ),
                             ],
                           ),
@@ -144,12 +152,17 @@ class _SignInPageState extends State<SignInPage> {
                             children: [
                               Text(
                                 'Password',
-                                style: TextStyle(fontSize: 18),
+                                style: GoogleFonts.roboto(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff555957)),
                               ),
                               Text(
                                 '*',
-                                style:
-                                    TextStyle(color: Colors.red, fontSize: 15),
+                                style: GoogleFonts.roboto(
+                                    color: Colors.red,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400),
                               ),
                             ],
                           ),
@@ -233,7 +246,10 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                         Text(
                           'Remember me',
-                          style: TextStyle(fontSize: 15),
+                          style: GoogleFonts.roboto(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff555957)),
                         )
                       ],
                     ),
@@ -254,7 +270,10 @@ class _SignInPageState extends State<SignInPage> {
                           onPressed: () {},
                           child: Text(
                             'Sign in',
-                            style: TextStyle(color: Colors.white, fontSize: 18),
+                            style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
                           )),
                     ),
                     SizedBox(
@@ -267,15 +286,18 @@ class _SignInPageState extends State<SignInPage> {
                         },
                         child: Text(
                           'Forgot the password?',
-                          style:
-                              TextStyle(fontSize: 18, color: themeColorGreen),
+                          style: GoogleFonts.roboto(
+                              fontSize: 18, color: themeColorGreen),
                         )),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           dont,
-                          style: TextStyle(fontSize: 18),
+                          style: GoogleFonts.roboto(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff555957)),
                         ),
                         TextButton(
                             onPressed: () {
@@ -284,8 +306,10 @@ class _SignInPageState extends State<SignInPage> {
                             },
                             child: Text(
                               'Sign Up',
-                              style: TextStyle(
-                                  color: themeColorGreen, fontSize: 18),
+                              style: GoogleFonts.roboto(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff555957)),
                             ))
                       ],
                     )

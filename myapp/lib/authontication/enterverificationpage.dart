@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/countdown_controller.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/forgotpasswordpage.dart';
 import 'package:myapp/authontication/resetpasswordpage.dart';
 
@@ -136,13 +137,18 @@ class _VerificationPageState extends State<VerificationPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Re-send Code in ",
-                    style: TextStyle(fontSize: 15),
-                  ),
+                  Text("Re-send Code in ",
+                      style: GoogleFonts.roboto(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff555957))),
                   Text("$_counter ",
                       style: TextStyle(fontSize: 15, color: timertxcol)),
-                  Text("seconds", style: TextStyle(fontSize: 15)),
+                  Text("seconds",
+                      style: GoogleFonts.roboto(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff555957))),
                 ],
               ),
               SizedBox(
@@ -170,7 +176,10 @@ class _VerificationPageState extends State<VerificationPage> {
                     },
                     child: Text(
                       _counter == 0 ? 'Re-send' : 'Next',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: GoogleFonts.roboto(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff555957)),
                     )),
               ),
             ],

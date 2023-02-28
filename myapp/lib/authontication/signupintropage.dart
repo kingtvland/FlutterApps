@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/signinpage.dart';
 import 'package:myapp/authontication/signupaccountchoosepage.dart';
 
@@ -41,8 +42,10 @@ class _SignIntroPageState extends State<SignIntroPage> {
                     Text(
                       'Choose your service',
                       textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.roboto(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff555957)),
                     ),
                     SizedBox(
                       height: 10,
@@ -51,7 +54,10 @@ class _SignIntroPageState extends State<SignIntroPage> {
                       'Ringknock is an online on demand service.'
                       'It has as into 50k+ services.',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 19),
+                      style: GoogleFonts.roboto(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff555957)),
                     ),
                   ],
                 ),
@@ -77,7 +83,8 @@ class _SignIntroPageState extends State<SignIntroPage> {
                           },
                           child: Text(
                             'Create Profile',
-                            style: TextStyle(color: Colors.white, fontSize: 18),
+                            style: GoogleFonts.roboto(
+                                color: Colors.white, fontSize: 18),
                           )),
                     ),
                     Row(
@@ -85,7 +92,10 @@ class _SignIntroPageState extends State<SignIntroPage> {
                       children: [
                         Text(
                           'Already have an account?',
-                          style: TextStyle(fontSize: 18),
+                          style: GoogleFonts.roboto(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff555957)),
                         ),
                         TextButton(
                             onPressed: () {
@@ -94,8 +104,10 @@ class _SignIntroPageState extends State<SignIntroPage> {
                             },
                             child: Text(
                               'Sign In',
-                              style: TextStyle(
-                                  color: themeColorGreen, fontSize: 18),
+                              style: GoogleFonts.roboto(
+                                  color: themeColorGreen,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
                             ))
                       ],
                     )

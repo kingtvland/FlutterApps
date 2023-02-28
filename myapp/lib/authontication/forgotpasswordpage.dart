@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/enterverificationpage.dart';
 import 'package:myapp/authontication/signinpage.dart';
 
@@ -60,7 +61,7 @@ class _ForegPasswordPageState extends State<ForegPasswordPage> {
           ),
           title: Text(
             'Forgot Password?',
-            style: TextStyle(color: Colors.black.withOpacity(0.5)),
+            style: GoogleFonts.roboto(color: Colors.black.withOpacity(0.5)),
           ),
         ),
         body: Center(
@@ -111,7 +112,10 @@ class _ForegPasswordPageState extends State<ForegPasswordPage> {
                         children: [
                           Text(
                             'Enter Your Phone',
-                            style: TextStyle(fontSize: 18),
+                            style: GoogleFonts.roboto(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff555957)),
                           ),
                           SizedBox(
                             height: 5,
@@ -140,7 +144,10 @@ class _ForegPasswordPageState extends State<ForegPasswordPage> {
                         children: [
                           Text(
                             'Enter Your Email',
-                            style: TextStyle(fontSize: 18),
+                            style: GoogleFonts.roboto(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff555957)),
                           ),
                           SizedBox(
                             height: 5,
@@ -183,7 +190,10 @@ class _ForegPasswordPageState extends State<ForegPasswordPage> {
                       },
                       child: Text(
                         'Next',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500),
                       )),
                 ),
               ],

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/registrationpage.dart';
 import 'package:myapp/authontication/signupintropage.dart';
 import 'package:myapp/utils/colors.dart';
@@ -65,31 +66,46 @@ class _SignAccountChoosePageState extends State<SignAccountChoosePage> {
               Text(
                 '''Choose your account 
     category''',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+                style: GoogleFonts.roboto(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff555957)),
               ),
               SizedBox(
                 height: 10,
               ),
               Row(
                 children: [
-                  Text('Choose',
-                      style: TextStyle(
-                        fontSize: 18,
-                      )),
+                  Text(
+                    'Choose',
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
+                  ),
                   Text(
                     ' become a professional ',
-                    style: TextStyle(fontSize: 18, color: Colors.green),
-                  ),
-                  Text('option and',
-                      style: TextStyle(
+                    style: GoogleFonts.roboto(
                         fontSize: 18,
-                      ))
+                        color: Colors.green,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    'option and',
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff555957)),
+                  )
                 ],
               ),
-              Text('continue',
-                  style: TextStyle(
-                    fontSize: 18,
-                  )),
+              Text(
+                'continue',
+                style: GoogleFonts.roboto(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff555957)),
+              ),
               SizedBox(
                 height: 50,
               ),
@@ -121,8 +137,10 @@ class _SignAccountChoosePageState extends State<SignAccountChoosePage> {
                               padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
                               child: Text(
                                 'Become a User',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w400),
+                                style: GoogleFonts.roboto(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff555957)),
                               ),
                             )),
                         Expanded(
@@ -170,8 +188,10 @@ class _SignAccountChoosePageState extends State<SignAccountChoosePage> {
                               padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
                               child: Text(
                                 'Become a Professional',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w400),
+                                style: GoogleFonts.roboto(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff555957)),
                               ),
                             )),
                         Expanded(
@@ -216,7 +236,10 @@ class _SignAccountChoosePageState extends State<SignAccountChoosePage> {
                           },
                           child: Text(
                             'Next',
-                            style: TextStyle(color: Colors.white, fontSize: 18),
+                            style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500),
                           )),
                     ),
                   ],

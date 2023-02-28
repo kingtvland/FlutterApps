@@ -61,28 +61,33 @@ class _MostPopularPageState extends State<MostPopularPage> {
       ),
       body: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DropdownButtonHideUnderline(
               child: DropdownButton2(
                 isExpanded: true,
-                hint: Row(
-                  children: [
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Sub Categories',
-                        style: GoogleFonts.roboto(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1,
-                          color: Color(0xffF2F2F2),
-                        ),
-                        overflow: TextOverflow.ellipsis,
+                hint: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 20, top: 20, bottom: 10, right: 20),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 4,
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: Text(
+                          'Sub Categories',
+                          style: GoogleFonts.roboto(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 1,
+                            color: Color(0xffF2F2F2),
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 items: items
                     .map((item) => DropdownMenuItem<String>(
