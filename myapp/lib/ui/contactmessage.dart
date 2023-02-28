@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_field, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,7 +54,7 @@ class _ContractMessageState extends State<ContractMessage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(left: 20, right: 20, top: 20),
               child: Row(
                 children: [
                   Expanded(

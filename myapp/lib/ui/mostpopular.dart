@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructor, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructor, prefer_const_constructors, avoid_unnecessary_containers, unused_field
 
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
