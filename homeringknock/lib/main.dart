@@ -30,11 +30,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      //home: BottomNavController(),
-      //home: CategoriesPage(),
-      //home: MostPopularPage(),
-      /* initialRoute: SplashPage.routeName,
+        debugShowCheckedModeBanner: false,
+        //home: BottomNavController(),
+        //home: CategoriesPage(),
+        //home: MostPopularPage(),
+        initialRoute: SplashPage.routeName,
         routes: {
           SplashPage.routeName: (context) => SplashPage(),
           IntroOnePage.routename: (context) => IntroOnePage(),
@@ -46,10 +46,10 @@ class MyApp extends StatelessWidget {
           ForegPasswordPage.routename: (context) => ForegPasswordPage(),
           VerificationPage.routename: (context) => VerificationPage(),
           ResetPasswordPage.routename: (context) => ResetPasswordPage(),
-        }*/
-      // home: ContractMessage(),
-      home: TrackingPostOrder(),
-      //home: OrderName(),
-    );
-  } 
+        }
+        // home: ContractMessage(),
+        // home: TrackingPostOrder(),
+        //home: OrderName(),
+        );
+  }
 }

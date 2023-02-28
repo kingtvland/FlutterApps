@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/authontication/introtwopage.dart';
 import 'package:myapp/authontication/signupintropage.dart';
+import 'package:myapp/nav_bar_page/nav_bar_controller.dart';
 import 'package:myapp/utils/colors.dart';
 
 import 'forgotpasswordpage.dart';
@@ -267,7 +268,10 @@ class _SignInPageState extends State<SignInPage> {
                                   BorderRadius.circular(10), // <-- Radius
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => BottomNavController()));
+                          },
                           child: Text(
                             'Sign in',
                             style: GoogleFonts.roboto(

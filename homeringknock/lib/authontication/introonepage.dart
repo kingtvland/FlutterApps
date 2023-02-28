@@ -36,20 +36,19 @@ class _IntroOnePageState extends State<IntroOnePage> {
                     Text(
                       'Easy to your on demand service',
                       style: GoogleFonts.roboto(
-                          fontSize: 24,
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
-                          letterSpacing: 2,
                           color: Color(0xff555957)),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                     Text(
                       'Ringknock is an online on demand service.'
                       'It has as into 50k+ services. You can buy every onto a service',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
-                          fontSize: 15,
+                          fontSize: 12,
                           fontWeight: FontWeight.w300,
                           color: Color(0xff555957)),
                     ),
