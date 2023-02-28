@@ -15,7 +15,9 @@ import 'package:myapp/nav_bar_page/nav_bar_controller.dart';
 import 'package:myapp/ui/categories.dart';
 import 'package:myapp/ui/contactmessage.dart';
 import 'package:myapp/ui/mostpopular.dart';
+import 'package:myapp/ui/ordername.dart';
 import 'package:myapp/ui/subcategory.dart';
+import 'package:myapp/ui/trackingpost.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +47,9 @@ class MyApp extends StatelessWidget {
           VerificationPage.routename: (context) => VerificationPage(),
           ResetPasswordPage.routename: (context) => ResetPasswordPage(),
         }*/
-      home: ContractMessage(),
+      // home: ContractMessage(),
+      //home: TrackingPostOrder(),
+      home: OrderName(),
     );
   }
 }
