@@ -50,9 +50,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
               width: 40,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(
-                          "https://s3-alpha-sig.figma.com/img/a2db/ea11/1db87c4614efa54373265ae109bf347a?Expires=1678665600&Signature=EfMJzPDGBr57IMplZ2GIZJjvYR8vlGZ3FQsYMYffKfuP3zubzc2NxNrBSb0BJxaexL591ceC2euz2pAIrjibqQwsGJbyC6cpFgZpIMYP4IwxlWg9cvL9QmWbmMur4yc0W42kypHCHxB1fnhWL2xdUHneBNcmO9qiF56Cad7kbzf40Z1NstVDGRAjXAtr9LwSs95YWbTyk0-G6PjuUvOj1b~otJEn4ETMEYxiIkhIYo~Dg~iuCYF~ftWpZTXHYsoQ6oV66wGVrIBUse9RaQx9WW3X-TAVJHWI4Ui8UF7ySLBqPShMPuYVvKMnkrKjPC4QR6t2sHtHiNen97~-9f9OIQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"),
-                      fit: BoxFit.cover),
+                      image: AssetImage("images/img2.png"), fit: BoxFit.cover),
                   shape: BoxShape.circle),
             ),
           )
@@ -63,37 +61,21 @@ class _CategoriesPageState extends State<CategoriesPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DropdownButtonHideUnderline(
-              child: DropdownButton2(
-                isExpanded: true,
-                hint: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 20, top: 20, bottom: 10, right: 20),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Expanded(
-                        child: Text(
-                          'Sub Categories',
-                          style: GoogleFonts.roboto(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1,
-                            color: Color(0xffF2F2F2),
-                          ),
-                          overflow: TextOverflow.ellipsis,
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton2(
+                  isExpanded: true,
+                  hint: Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 4,
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                items: items
-                    .map((item) => DropdownMenuItem<String>(
-                          value: item,
+                        Expanded(
                           child: Text(
-                            item,
+                            'Sub Categories',
                             style: GoogleFonts.roboto(
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
@@ -102,42 +84,60 @@ class _CategoriesPageState extends State<CategoriesPage> {
                             ),
                             overflow: TextOverflow.ellipsis,
                           ),
-                        ))
-                    .toList(),
-                value: selectedValue,
-                onChanged: (value) {
-                  setState(() {
-                    selectedValue = value as String;
-                  });
-                },
-                icon: Icon(
-                  Icons.arrow_drop_down,
+                        ),
+                      ],
+                    ),
+                  ),
+                  items: items
+                      .map((item) => DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(
+                              item,
+                              style: GoogleFonts.roboto(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1,
+                                color: Color(0xffF2F2F2),
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ))
+                      .toList(),
+                  value: selectedValue,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedValue = value as String;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.arrow_drop_down,
+                  ),
+                  iconSize: 14,
+                  iconEnabledColor: Color(0xffF2F2F2),
+                  iconDisabledColor: Colors.grey,
+                  buttonHeight: 36,
+                  buttonWidth: 207,
+                  buttonPadding: EdgeInsets.only(left: 14, right: 14),
+                  buttonDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: Color(0xff187949),
+                  ),
+                  buttonElevation: 2,
+                  itemHeight: 40,
+                  itemPadding: EdgeInsets.only(left: 14, right: 14),
+                  dropdownMaxHeight: 200,
+                  dropdownWidth: 200,
+                  dropdownPadding: null,
+                  dropdownDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: Color(0xff187949),
+                  ),
+                  dropdownElevation: 8,
+                  scrollbarRadius: Radius.circular(4),
+                  scrollbarThickness: 6,
+                  scrollbarAlwaysShow: true,
+                  offset: Offset(-20, 0),
                 ),
-                iconSize: 14,
-                iconEnabledColor: Color(0xffF2F2F2),
-                iconDisabledColor: Colors.grey,
-                buttonHeight: 36,
-                buttonWidth: 207,
-                buttonPadding: EdgeInsets.only(left: 14, right: 14),
-                buttonDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4),
-                  color: Color(0xff187949),
-                ),
-                buttonElevation: 2,
-                itemHeight: 40,
-                itemPadding: EdgeInsets.only(left: 14, right: 14),
-                dropdownMaxHeight: 200,
-                dropdownWidth: 200,
-                dropdownPadding: null,
-                dropdownDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4),
-                  color: Color(0xff187949),
-                ),
-                dropdownElevation: 8,
-                scrollbarRadius: Radius.circular(4),
-                scrollbarThickness: 6,
-                scrollbarAlwaysShow: true,
-                offset: Offset(-20, 0),
               ),
             ),
             Padding(

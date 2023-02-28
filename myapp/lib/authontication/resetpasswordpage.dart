@@ -63,11 +63,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
             children: [
               Text(
                 'Forgot Password',
-                style: TextStyle(color: Colors.black.withOpacity(0.7)),
+                style: GoogleFonts.roboto(color: Colors.black.withOpacity(0.7)),
               ),
               Text(
                 'Create a new password',
-                style: TextStyle(
+                style: GoogleFonts.roboto(
                     fontSize: 15, color: Colors.black.withOpacity(0.6)),
               )
             ],

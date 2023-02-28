@@ -13,6 +13,7 @@ import 'package:myapp/authontication/signupintropage.dart';
 import 'package:myapp/authontication/splashscreen.dart';
 import 'package:myapp/nav_bar_page/nav_bar_controller.dart';
 import 'package:myapp/ui/categories.dart';
+import 'package:myapp/ui/contactmessage.dart';
 import 'package:myapp/ui/mostpopular.dart';
 import 'package:myapp/ui/subcategory.dart';
 
@@ -27,11 +28,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        //home: BottomNavController(),
-        //home: CategoriesPage(),
-        //home: MostPopularPage(),
-        initialRoute: SplashPage.routeName,
+      debugShowCheckedModeBanner: false,
+      //home: BottomNavController(),
+      //home: CategoriesPage(),
+      //home: MostPopularPage(),
+      /* initialRoute: SplashPage.routeName,
         routes: {
           SplashPage.routeName: (context) => SplashPage(),
           IntroOnePage.routename: (context) => IntroOnePage(),
@@ -43,6 +44,8 @@ class MyApp extends StatelessWidget {
           ForegPasswordPage.routename: (context) => ForegPasswordPage(),
           VerificationPage.routename: (context) => VerificationPage(),
           ResetPasswordPage.routename: (context) => ResetPasswordPage(),
-        });
+        }*/
+      home: ContractMessage(),
+    );
   }
 }
