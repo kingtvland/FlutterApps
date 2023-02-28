@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_field, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, unused_field, avoid_unnecessary_containers, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +13,7 @@ class ContractMessage extends StatefulWidget {
 class _ContractMessageState extends State<ContractMessage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   final TextEditingController nameController = TextEditingController();
+  var selected = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -112,6 +113,56 @@ class _ContractMessageState extends State<ContractMessage> {
             ),
             SizedBox(
               height: 20,
+            ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                ),
+                height: 34,
+                child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: ((context, index) {
+                      return InkWell(
+                        onTap: (() {
+                          setState(() {
+                            selected = index;
+                          });
+                        }),
+                        child: Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: selected == index
+                                          ? Colors.white
+                                          : Color(0xff187949)),
+                                  borderRadius: BorderRadius.circular(6),
+                                  color: selected == index
+                                      ? Color(0xff187949)
+                                      : Colors.white),
+                              child: Text(
+                                "All Chat",
+                                style: GoogleFonts.roboto(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: selected == index
+                                        ? Colors.white
+                                        : Colors.black),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 10),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                    separatorBuilder: (_, index) => SizedBox(
+                          width: 10,
+                        ),
+                    itemCount: 10),
+              ),
             ),
             Expanded(
               flex: 6,
