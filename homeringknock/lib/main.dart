@@ -18,6 +18,7 @@ import 'package:myapp/ui/mostpopular.dart';
 import 'package:myapp/ui/ordername.dart';
 import 'package:myapp/ui/subcategory.dart';
 import 'package:myapp/ui/trackingpost.dart';
+import 'package:myapp/ui/trackingpostorder.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +50,8 @@ class MyApp extends StatelessWidget {
         }*/
       // home: ContractMessage(),
       //home: TrackingPostOrder(),
-      home: OrderName(),
+      //home: OrderName(),
+      home: TrackingPostOrderTwo(),
     );
   }
 }
