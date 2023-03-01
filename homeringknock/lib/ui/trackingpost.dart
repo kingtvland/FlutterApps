@@ -73,7 +73,7 @@ class _TrackingPostOrderState extends State<TrackingPostOrder> {
         automaticallyImplyLeading: false,
       ),
       body: Container(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 70),
         child: Column(
           children: [
             Row(
