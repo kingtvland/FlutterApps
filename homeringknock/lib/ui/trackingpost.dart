@@ -303,7 +303,7 @@ class _TrackingPostOrderState extends State<TrackingPostOrder> {
                   separatorBuilder: (_, index) => SizedBox(
                         height: 10,
                       ),
-                  itemCount: 20),
+                  itemCount: 10),
             )
           ],
         ),

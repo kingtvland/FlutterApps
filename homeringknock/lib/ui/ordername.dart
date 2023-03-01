@@ -314,7 +314,7 @@ class _OrderNameState extends State<OrderName> {
                   separatorBuilder: (_, index) => SizedBox(
                         height: 5,
                       ),
-                  itemCount: 20),
+                  itemCount: 10),
             )
           ],
         ),
