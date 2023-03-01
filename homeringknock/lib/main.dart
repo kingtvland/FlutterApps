@@ -14,6 +14,7 @@ import 'package:myapp/authontication/splashscreen.dart';
 import 'package:myapp/nav_bar_page/nav_bar_controller.dart';
 import 'package:myapp/ui/categories.dart';
 import 'package:myapp/ui/contactmessage.dart';
+import 'package:myapp/ui/contractmessagetwo.dart';
 import 'package:myapp/ui/mostpopular.dart';
 import 'package:myapp/ui/ordername.dart';
 import 'package:myapp/ui/subcategory.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
       //home: TrackingPostOrder(),
       //home: OrderName(),
       home: TrackingPostOrderTwo(),
+      //home: ContractMessageTwo(),
     );
   }
 }
