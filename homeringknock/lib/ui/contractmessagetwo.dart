@@ -88,7 +88,7 @@ class _ContractMessageTwoState extends State<ContractMessageTwo> {
                   child: Card(
                     child: Center(
                       child: Text(
-                        "10:30",
+                        "10:20",
                         style: GoogleFonts.roboto(
                             fontSize: 10, fontWeight: FontWeight.w300),
                       ),

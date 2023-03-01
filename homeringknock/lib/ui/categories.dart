@@ -246,7 +246,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   separatorBuilder: (_, index) => SizedBox(
                         height: 10,
                       ),
-                  itemCount: 20),
+                  itemCount: 10),
             )
           ],
         ),
