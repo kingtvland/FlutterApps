@@ -18,6 +18,27 @@ class _TrackingPostOrderState extends State<TrackingPostOrder> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: MaterialButton(
+          onPressed: () {},
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.0),
+              color: Color(0xff187949),
+            ),
+            padding: EdgeInsets.only(left: 16, right: 16),
+            width: double.infinity,
+            height: 50,
+            child: Center(
+              child: Text(
+                "Add a new job post",
+                style: GoogleFonts.roboto(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white),
+              ),
+            ),
+          )),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
