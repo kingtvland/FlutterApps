@@ -22,7 +22,7 @@ class _DocumentState extends State<Document> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                padding: EdgeInsets.only(left: 20, right: 20),
                 child: Row(
                   children: [
                     Expanded(

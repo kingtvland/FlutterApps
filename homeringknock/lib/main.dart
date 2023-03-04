@@ -15,8 +15,11 @@ import 'package:myapp/nav_bar_page/nav_bar_controller.dart';
 import 'package:myapp/ui/categories.dart';
 import 'package:myapp/ui/contactmessage.dart';
 import 'package:myapp/ui/contractmessagetwo.dart';
+import 'package:myapp/ui/createordeone.dart';
+import 'package:myapp/ui/locationpage.dart';
 import 'package:myapp/ui/mostpopular.dart';
 import 'package:myapp/ui/ordername.dart';
+import 'package:myapp/ui/searchresult.dart';
 import 'package:myapp/ui/subcategory.dart';
 import 'package:myapp/ui/trackingpost.dart';
 import 'package:myapp/ui/trackingpostorder.dart';
@@ -33,6 +36,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      //home: SearchResult(),
+      //home: LocationPage(),
       //home: BottomNavController(),
       //home: CategoriesPage(),
       //home: MostPopularPage(),
@@ -52,8 +57,9 @@ class MyApp extends StatelessWidget {
       // home: ContractMessage(),
       //home: TrackingPostOrder(),
       //home: OrderName(),
-      home: TrackingPostOrderTwo(),
+      //home: TrackingPostOrderTwo(),
       //home: ContractMessageTwo(),
+      home: CreateOrderOne(),
     );
   }
 }
