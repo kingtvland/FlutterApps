@@ -1,0 +1,32 @@
+name: studentapp
+description: A new Flutter project.
+version: 1.0.0+1
+environment: 
+   sdk: '>=2.18.4 <3.0.0'
+dependencies: 
+  flutter: 
+    sdk: flutter
+  provider: ^6.0.5
+  cached_network_image: 
+  flutter_svg: 
+  carousel_slider: 
+  smooth_page_indicator: 
+  flutter_rating_bar: 
+  intl: 
+dev_dependencies: 
+  flutter_test: 
+    sdk: flutter
+flutter: 
+  uses-material-design: true
+  assets: 
+    - assets/
+    - assets/images/
+  fonts: 
+    - family: Poppins
+      fonts: 
+        - asset: assets/fonts/PoppinsBold.ttf
+          weight: 700
+        - asset: assets/fonts/PoppinsRegular.ttf
+          weight: 400
+        - asset: assets/fonts/PoppinsSemiBold.ttf
+          weight: 600
